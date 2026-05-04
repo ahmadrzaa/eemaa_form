@@ -81,8 +81,8 @@ textarea {
 
 /* MAIN WIDTH */
 .eemaa-member-shell {
-    width: min(1100px, calc(100vw - 48px));
-    max-width: 100%;
+    width: min(960px, calc(100vw - 96px));
+    max-width: 960px;
     margin: 0 auto;
     overflow-x: hidden;
 }
@@ -123,7 +123,7 @@ textarea {
     background: #ffffff;
     border-radius: 20px;
     box-shadow: 0 10px 40px rgba(0, 5, 20, 0.04);
-    padding: 40px 60px;
+    padding: 40px 52px;
     border: 1px solid rgba(226, 232, 240, 0.8);
     overflow-x: hidden;
 }
@@ -587,7 +587,8 @@ input[type="date"].eemaa-input::-webkit-calendar-picker-indicator {
 /* TABLET / SMALL LAPTOP */
 @media (max-width: 1024px) {
     .eemaa-member-shell {
-        width: min(920px, calc(100vw - 40px));
+        width: min(900px, calc(100vw - 40px));
+        max-width: 900px;
     }
 
     .eemaa-form-container {
