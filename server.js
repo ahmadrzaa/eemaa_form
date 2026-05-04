@@ -3,7 +3,7 @@ const fs = require("fs/promises");
 const path = require("path");
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.use(express.json({ limit: "2mb" }));
 app.use(express.urlencoded({ extended: true }));
@@ -119,7 +119,8 @@ app.get("/api/applications", async (req, res) => {
         const existingData = await fs.readFile(DATA_FILE, "utf8");
         const applications = JSON.parse(existingData || "[]");
 
-        res.json({
+        res.json({ 
+
             success: true,
             count: applications.length,
             data: applications
