@@ -1,0 +1,721 @@
+/* ======================================================
+   EEMAA MEMBERSHIP FORM - FULL RESPONSIVE CSS
+   Background image file: ./bg2-02.jpg
+====================================================== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.16), rgba(0, 0, 0, 0.16)),
+        url("./bg2-02.jpg");
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    scrollbar-width: thin;
+    scrollbar-color: #000 #f1f1f1;
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #000;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #333;
+}
+
+/* PAGE */
+.eemaa-member-page {
+    width: 100%;
+    min-height: 100vh;
+    padding: 0 0 60px;
+    font-family: "Poppins", Helvetica, Arial, sans-serif;
+}
+
+/* MAIN WIDTH */
+.eemaa-member-shell {
+    width: calc(100% - 48px);
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* HERO */
+.eemaa-hero {
+    text-align: center;
+    padding-top: 42px;
+    margin-bottom: 30px;
+}
+
+.eemaa-hero h1 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    font-weight: 700;
+    margin: 0 0 15px;
+    text-align: center;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    line-height: 1.2;
+}
+
+.eemaa-hero p {
+    max-width: 900px;
+    margin: -5px auto 0;
+    text-align: center;
+    color: #ffffff;
+    font-size: 1.1rem;
+    line-height: 1.45;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* FORM CARD */
+.eemaa-form-container {
+    width: 100%;
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 5, 20, 0.04);
+    padding: 40px 60px;
+    border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+/* SECTIONS */
+.eemaa-form-section {
+    margin-bottom: 50px;
+}
+
+.eemaa-form-section.last-section {
+    margin-bottom: 0;
+}
+
+.eemaa-section-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding-bottom: 22px;
+    margin-bottom: 28px;
+    border-bottom: 1px solid #edf1f5;
+}
+
+.eemaa-section-circle {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    background: #a38647;
+    color: #ffffff;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.eemaa-section-header h2 {
+    margin: 0;
+    color: #06243b;
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+}
+
+/* GRID */
+.eemaa-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px 80px;
+}
+
+.eemaa-field {
+    width: 100%;
+    min-width: 0;
+}
+
+.eemaa-field.full {
+    grid-column: 1 / -1;
+}
+
+/* LABELS */
+.eemaa-label {
+    display: block;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #475569;
+    margin-bottom: 10px;
+    line-height: 1.35;
+}
+
+.eemaa-label span {
+    color: #ef4444;
+}
+
+/* INPUTS */
+.eemaa-input,
+.eemaa-select,
+.eemaa-textarea {
+    width: 100%;
+    height: 52px;
+    padding: 0 20px;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 9px;
+    color: #0f172a;
+    font-family: "Poppins", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    outline: none;
+    box-shadow: none;
+    min-width: 0;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.eemaa-input::placeholder,
+.eemaa-textarea::placeholder {
+    color: #64748b;
+}
+
+.eemaa-input:focus,
+.eemaa-select:focus,
+.eemaa-textarea:focus {
+    border-color: #a38647;
+    box-shadow: 0 0 0 3px rgba(163, 134, 71, 0.12);
+}
+
+.eemaa-select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image:
+        linear-gradient(45deg, transparent 50%, #475569 50%),
+        linear-gradient(135deg, #475569 50%, transparent 50%);
+    background-position:
+        calc(100% - 25px) 23px,
+        calc(100% - 19px) 23px;
+    background-size: 6px 6px;
+    background-repeat: no-repeat;
+    padding-right: 50px;
+}
+
+.eemaa-textarea {
+    height: 120px;
+    min-height: 120px;
+    padding-top: 15px;
+    resize: vertical;
+}
+
+/* NOTE BOX */
+.eemaa-note {
+    background: #f8fafc;
+    border: 1px solid #edf1f5;
+    border-radius: 9px;
+    padding: 18px 20px;
+    margin-bottom: 24px;
+    color: #475569;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
+
+.eemaa-note p {
+    margin: 0 0 12px;
+}
+
+.eemaa-note p:last-child {
+    margin-bottom: 0;
+}
+
+/* CHECKBOX GROUPS */
+.eemaa-checkbox-group {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.eemaa-checkbox-group.single {
+    grid-template-columns: 1fr;
+    margin-bottom: 26px;
+}
+
+.eemaa-checkbox-space {
+    margin-top: 24px;
+}
+
+/* CHECKBOX CARDS */
+.eemaa-checkbox-card {
+    width: 100%;
+    min-height: 66px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 9px;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    cursor: pointer;
+    margin: 0;
+    color: #000000;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+    transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.eemaa-checkbox-card:hover {
+    background: #ffffff;
+    border-color: #a38647;
+}
+
+.eemaa-checkbox-card input {
+    width: 16px;
+    height: 16px;
+    min-width: 16px;
+    margin: 0;
+    padding: 0;
+    accent-color: #a38647;
+    flex-shrink: 0;
+}
+
+.eemaa-checkbox-card span {
+    display: block;
+    min-width: 0;
+}
+
+/* SELECTED CHECKBOX CARD */
+.eemaa-checkbox-card:has(input:checked),
+.eemaa-checkbox-card.is-checked {
+    background: #fffaf0;
+    border-color: #a38647;
+    box-shadow: 0 0 0 3px rgba(163, 134, 71, 0.14);
+}
+
+.eemaa-checkbox-card:has(input:focus),
+.eemaa-checkbox-card.is-focused {
+    border-color: #a38647;
+    box-shadow: 0 0 0 3px rgba(163, 134, 71, 0.14);
+}
+
+.eemaa-checkbox-card.field-error {
+    border-color: #ef4444 !important;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.12) !important;
+}
+
+/* SUBMIT */
+.eemaa-submit-wrap {
+    border-top: 1px solid #edf1f5;
+    margin-top: 42px;
+    padding-top: 52px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.eemaa-submit-btn {
+    width: auto;
+    min-width: 260px;
+    max-width: 100%;
+    background: #a38647;
+    color: #ffffff;
+    padding: 18px 48px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font-family: "Poppins", Helvetica, Arial, sans-serif;
+    line-height: 1.2;
+    text-align: center;
+    white-space: nowrap;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.eemaa-submit-btn:hover {
+    background: #8b7139;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(163, 134, 71, 0.2);
+}
+
+.eemaa-submit-btn:active {
+    transform: translateY(0);
+}
+
+/* MESSAGE */
+.eemaa-message {
+    text-align: center;
+    margin: 18px 0 0;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.eemaa-message.success {
+    color: #15803d;
+}
+
+.eemaa-message.error {
+    color: #b42318;
+}
+
+/* FOOTER */
+.eemaa-footer {
+    text-align: center;
+    margin-top: 28px;
+    color: #ffffff;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.35);
+}
+
+.eemaa-footer h3 {
+    margin: 0 0 8px;
+    font-size: 16px;
+    color: #ffffff;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.eemaa-footer p {
+    margin: 4px 0;
+    font-size: 14px;
+    color: #ffffff;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+/* STATES */
+.is-hidden {
+    display: none !important;
+}
+
+.field-error {
+    border-color: #ef4444 !important;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.12) !important;
+}
+
+/* TABLET / SMALL LAPTOP */
+@media (max-width: 1024px) {
+    .eemaa-member-shell {
+        width: calc(100% - 40px);
+        max-width: 920px;
+    }
+
+    .eemaa-form-container {
+        padding: 38px 42px;
+    }
+
+    .eemaa-grid {
+        gap: 26px 48px;
+    }
+
+    .eemaa-checkbox-group {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* BIG MOBILE + TABLET PORTRAIT */
+@media (max-width: 850px) {
+    body {
+        background-attachment: scroll;
+    }
+
+    .eemaa-member-page {
+        padding-bottom: 42px;
+    }
+
+    .eemaa-member-shell {
+        width: calc(100% - 28px);
+        max-width: 680px;
+    }
+
+    .eemaa-hero {
+        padding-top: 36px;
+        margin-bottom: 24px;
+    }
+
+    .eemaa-hero h1 {
+        font-size: 1.9rem;
+        color: #ffffff;
+        margin-bottom: 12px;
+    }
+
+    .eemaa-hero p {
+        font-size: 0.95rem;
+        line-height: 1.55;
+        padding: 0 6px;
+    }
+
+    .eemaa-form-container {
+        border-radius: 18px;
+        padding: 34px 26px;
+    }
+
+    .eemaa-form-section {
+        margin-bottom: 42px;
+    }
+
+    .eemaa-section-header {
+        gap: 12px;
+        padding-bottom: 18px;
+        margin-bottom: 24px;
+        align-items: flex-start;
+    }
+
+    .eemaa-section-circle {
+        width: 30px;
+        height: 30px;
+        min-width: 30px;
+        font-size: 0.82rem;
+    }
+
+    .eemaa-section-header h2 {
+        font-size: 1rem;
+        letter-spacing: 2.4px;
+        line-height: 1.35;
+        padding-top: 3px;
+    }
+
+    .eemaa-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .eemaa-checkbox-group {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .eemaa-note {
+        padding: 16px 18px;
+        font-size: 0.92rem;
+    }
+
+    .eemaa-checkbox-card {
+        min-height: 60px;
+        padding: 14px 16px;
+        font-size: 0.95rem;
+    }
+
+    .eemaa-submit-wrap {
+        margin-top: 34px;
+        padding-top: 38px;
+    }
+
+    .eemaa-submit-btn {
+        width: auto;
+        min-width: 220px;
+        padding: 15px 28px;
+        font-size: 1rem;
+        border-radius: 10px;
+    }
+}
+
+/* NORMAL MOBILE */
+@media (max-width: 600px) {
+    .eemaa-member-shell {
+        width: calc(100% - 22px);
+    }
+
+    .eemaa-hero {
+        padding-top: 30px;
+        margin-bottom: 20px;
+    }
+
+    .eemaa-hero h1 {
+        font-size: 1.65rem;
+    }
+
+    .eemaa-hero p {
+        font-size: 0.9rem;
+    }
+
+    .eemaa-form-container {
+        border-radius: 16px;
+        padding: 28px 18px;
+    }
+
+    .eemaa-form-section {
+        margin-bottom: 38px;
+    }
+
+    .eemaa-section-header {
+        margin-bottom: 22px;
+    }
+
+    .eemaa-section-header h2 {
+        font-size: 0.92rem;
+        letter-spacing: 2px;
+    }
+
+    .eemaa-label {
+        font-size: 0.84rem;
+    }
+
+    .eemaa-input,
+    .eemaa-select,
+    .eemaa-textarea {
+        height: 50px;
+        padding-left: 15px;
+        padding-right: 15px;
+        font-size: 16px;
+    }
+
+    .eemaa-select {
+        background-position:
+            calc(100% - 22px) 22px,
+            calc(100% - 16px) 22px;
+        padding-right: 42px;
+    }
+
+    .eemaa-note {
+        padding: 15px 15px;
+        font-size: 0.88rem;
+    }
+
+    .eemaa-checkbox-card {
+        min-height: 58px;
+        padding: 13px 14px;
+        gap: 12px;
+        font-size: 0.9rem;
+    }
+
+    .eemaa-footer h3 {
+        font-size: 14px;
+    }
+
+    .eemaa-footer p {
+        font-size: 13px;
+    }
+
+    .eemaa-submit-btn {
+        min-width: 205px;
+        padding: 14px 24px;
+        font-size: 0.95rem;
+    }
+}
+
+/* SMALL MOBILE / IPHONE SE SIZE */
+@media (max-width: 390px) {
+    .eemaa-member-shell {
+        width: calc(100% - 18px);
+    }
+
+    .eemaa-hero h1 {
+        font-size: 1.48rem;
+    }
+
+    .eemaa-hero p {
+        font-size: 0.84rem;
+    }
+
+    .eemaa-form-container {
+        padding: 24px 14px;
+        border-radius: 14px;
+    }
+
+    .eemaa-section-header {
+        gap: 10px;
+        padding-bottom: 16px;
+    }
+
+    .eemaa-section-circle {
+        width: 28px;
+        height: 28px;
+        min-width: 28px;
+        font-size: 0.78rem;
+    }
+
+    .eemaa-section-header h2 {
+        font-size: 0.84rem;
+        letter-spacing: 1.6px;
+    }
+
+    .eemaa-grid {
+        gap: 20px;
+    }
+
+    .eemaa-checkbox-card {
+        padding: 12px;
+        font-size: 0.86rem;
+    }
+
+    .eemaa-checkbox-card input {
+        width: 15px;
+        height: 15px;
+        min-width: 15px;
+    }
+
+    .eemaa-submit-wrap {
+        padding-top: 32px;
+    }
+
+    .eemaa-submit-btn {
+        min-width: 190px;
+        padding: 13px 20px;
+        font-size: 0.9rem;
+        border-radius: 9px;
+    }
+}
+
+/* EXTRA TINY MOBILE */
+@media (max-width: 340px) {
+    .eemaa-member-shell {
+        width: calc(100% - 14px);
+    }
+
+    .eemaa-form-container {
+        padding: 22px 12px;
+    }
+
+    .eemaa-section-header h2 {
+        font-size: 0.78rem;
+        letter-spacing: 1.2px;
+    }
+
+    .eemaa-input,
+    .eemaa-select,
+    .eemaa-textarea {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .eemaa-submit-btn {
+        min-width: 175px;
+        padding: 12px 18px;
+        font-size: 0.86rem;
+    }
+}
