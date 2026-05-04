@@ -344,12 +344,9 @@ body {
 }
 
 .eemaa-submit-btn {
-    width: auto;
-    min-width: 260px;
-    max-width: 100%;
     background: #a38647;
-    color: #ffffff;
-    padding: 18px 48px;
+    color: #fff;
+    padding: 18px 60px;
     border-radius: 12px;
     font-weight: 600;
     font-size: 1.1rem;
@@ -360,11 +357,19 @@ body {
     align-items: center;
     justify-content: center;
     gap: 12px;
-    font-family: "Poppins", Helvetica, Arial, sans-serif;
+    width: auto;
+    min-width: 0;
+    height: auto;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
     line-height: 1.2;
-    text-align: center;
     white-space: nowrap;
-    -webkit-tap-highlight-color: transparent;
+}
+
+.eemaa-submit-btn i {
+    font-size: 0.95rem;
+    line-height: 1;
+    transform: translateY(-2px);
 }
 
 .eemaa-submit-btn:hover {
@@ -717,5 +722,23 @@ body {
         min-width: 175px;
         padding: 12px 18px;
         font-size: 0.86rem;
+    }
+}
+
+@media (max-width: 850px) {
+    .eemaa-submit-btn {
+        width: auto;
+        min-width: 210px;
+        padding: 15px 28px;
+        font-size: 1rem;
+        border-radius: 10px;
+    }
+}
+
+@media (max-width: 390px) {
+    .eemaa-submit-btn {
+        min-width: 190px;
+        padding: 13px 22px;
+        font-size: 0.9rem;
     }
 }
