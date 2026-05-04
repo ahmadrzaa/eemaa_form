@@ -2,463 +2,637 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <title>EEMAA Membership Application</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
+    <div class="eemaa-member-page">
+        <main class="eemaa-member-shell">
 
-<div class="eemaa-member-page">
-    <main class="eemaa-member-shell">
+            <section class="eemaa-hero">
+                <h1>Become a Member</h1>
+                <p>
+                    Please complete this form to become a member of Ethiopian Edir Mutual Assistance Association in New York Inc.
+                </p>
+            </section>
 
-        <section class="eemaa-hero">
-            <h1>Become a Member</h1>
-            <p>
-                Please complete this form to become a member of Ethiopian Edir Mutual Assistance Association in New York Inc.
-            </p>
-        </section>
+            <section class="eemaa-form-container">
+                <form id="membershipForm" method="post" action="#" novalidate>
 
-        <section class="eemaa-form-container">
-            <form id="membershipForm" method="post" action="#" novalidate>
-
-                <div class="eemaa-form-section">
-                    <div class="eemaa-section-header">
-                        <div class="eemaa-section-circle">1</div>
-                        <h2>New Members’ Application Requirement Guide</h2>
-                    </div>
-
-                    <div class="eemaa-note">
-                        <p>All applicants to Edir should apply in person, husband and wife if married, at the in-person Board meeting.</p>
-                        <p>If the Board meeting is held virtually, the applicant, both husband and wife if married, must appear at the virtual meeting.</p>
-                        <p>All applicants to Edir should submit the following required documents at the in-person Board meeting or by mail if the Board meeting is held virtually.</p>
-                    </div>
-                </div>
-
-                <div class="eemaa-form-section">
-                    <div class="eemaa-section-header">
-                        <div class="eemaa-section-circle">2</div>
-                        <h2>Required Documents</h2>
-                    </div>
-
-                    <div class="eemaa-checkbox-group">
-                        <label class="eemaa-checkbox-card">
-                            <input type="checkbox" name="required_documents[]" value="Completed Application Form">
-                            <span>Completed Application Form</span>
-                        </label>
-
-                        <label class="eemaa-checkbox-card">
-                            <input type="checkbox" name="required_documents[]" value="Driver License or City ID">
-                            <span>Driver’s license or City ID with Tri-State address</span>
-                        </label>
-
-                        <label class="eemaa-checkbox-card">
-                            <input type="checkbox" name="required_documents[]" value="Dependent Children Birth Certificate">
-                            <span>Birth certificate for dependent children under age 22</span>
-                        </label>
-
-                        <label class="eemaa-checkbox-card">
-                            <input type="checkbox" name="required_documents[]" value="Applicant Birth Certificate">
-                            <span>Birth Certificate for applicants aged 22 to 35</span>
-                        </label>
-
-                        <label class="eemaa-checkbox-card">
-                            <input type="checkbox" name="required_documents[]" value="Marriage Certificate">
-                            <span>Marriage certificate for married couples</span>
-                        </label>
-
-                        <label class="eemaa-checkbox-card">
-                            <input type="checkbox" name="required_documents[]" value="Application Fees">
-                            <span>Application fees</span>
-                        </label>
-                    </div>
-                </div>
-
-                <div class="eemaa-form-section">
-                    <div class="eemaa-section-header">
-                        <div class="eemaa-section-circle">3</div>
-                        <h2>Dues & Fees</h2>
-                    </div>
-
-                    <div class="eemaa-checkbox-group">
-                        <label class="eemaa-checkbox-card fee-card">
-                            <input type="checkbox" name="dues_fees[]" value="1000">
-                            <span>$1000 — Couples and individuals over 35 years</span>
-                        </label>
-
-                        <label class="eemaa-checkbox-card fee-card">
-                            <input type="checkbox" name="dues_fees[]" value="150">
-                            <span>$150 — Applicants aged 22 to 35 years</span>
-                        </label>
-
-                        <label class="eemaa-checkbox-card fee-card">
-                            <input type="checkbox" name="dues_fees[]" value="500">
-                            <span>$500 — Members’ dependent parent</span>
-                        </label>
-
-                        <label class="eemaa-checkbox-card fee-card">
-                            <input type="checkbox" name="dues_fees[]" value="75">
-                            <span>$75 — Dependents under 22 years</span>
-                        </label>
-
-                        <label class="eemaa-checkbox-card fee-card">
-                            <input type="checkbox" name="dues_fees[]" value="60">
-                            <span>$60 — Annual administrative fee</span>
-                        </label>
-                    </div>
-                </div>
-
-                <div class="eemaa-form-section">
-                    <div class="eemaa-section-header">
-                        <div class="eemaa-section-circle">4</div>
-                        <h2>Application for Membership</h2>
-                    </div>
-
-                    <div class="eemaa-grid">
-                        <div class="eemaa-field">
-                            <label class="eemaa-label">Applicant Full Name <span>*</span></label>
-                            <input class="eemaa-input" type="text" name="applicant_full_name" placeholder="Enter applicant full name" required>
+                    <!-- SECTION 1 -->
+                    <div class="eemaa-form-section">
+                        <div class="eemaa-section-header">
+                            <div class="eemaa-section-circle">1</div>
+                            <h2>New Members’ Application Requirement Guide</h2>
                         </div>
 
-                        <div class="eemaa-field">
-                            <label class="eemaa-label">Marital Status <span>*</span></label>
-                            <select class="eemaa-select" name="marital_status" id="maritalStatus" required>
-                                <option value="">Select Status</option>
-                                <option value="Single">Single</option>
-                                <option value="Married">Married</option>
-                            </select>
-                        </div>
-
-                        <div class="eemaa-field full spouse-field">
-                            <label class="eemaa-label">If Married, Full Name of Spouse</label>
-                            <input class="eemaa-input" type="text" name="spouse_full_name" placeholder="Enter spouse full name">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="eemaa-form-section">
-                    <div class="eemaa-section-header">
-                        <div class="eemaa-section-circle">5</div>
-                        <h2>Permanent Residence Address</h2>
-                    </div>
-
-                    <div class="eemaa-grid">
-                        <div class="eemaa-field full">
-                            <label class="eemaa-label">Address Line 1 <span>*</span></label>
-                            <input class="eemaa-input" type="text" name="address_line_1" placeholder="Enter address line 1" required>
-                        </div>
-
-                        <div class="eemaa-field">
-                            <label class="eemaa-label">City <span>*</span></label>
-                            <input class="eemaa-input" type="text" name="city" placeholder="Enter city" required>
-                        </div>
-
-                        <div class="eemaa-field">
-                            <label class="eemaa-label">State <span>*</span></label>
-                            <input class="eemaa-input" type="text" name="state" placeholder="Enter state" required>
-                        </div>
-
-                        <div class="eemaa-field">
-                            <label class="eemaa-label">Zip Code <span>*</span></label>
-                            <input class="eemaa-input" type="text" name="zip_code" placeholder="Enter zip code" required>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="eemaa-form-section">
-                    <div class="eemaa-section-header">
-                        <div class="eemaa-section-circle">6</div>
-                        <h2>Contact Details</h2>
-                    </div>
-
-                    <div class="eemaa-grid">
-                        <div class="eemaa-field">
-                            <label class="eemaa-label">Home Phone</label>
-                            <input class="eemaa-input" type="tel" name="home_phone" placeholder="Enter home phone">
-                        </div>
-
-                        <div class="eemaa-field">
-                            <label class="eemaa-label">Cell Phone <span>*</span></label>
-                            <input class="eemaa-input" type="tel" name="cell_phone" placeholder="Enter cell phone" required>
-                        </div>
-
-                        <div class="eemaa-field full">
-                            <label class="eemaa-label">Email <span>*</span></label>
-                            <input class="eemaa-input" type="email" name="email" placeholder="example@email.com" required>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="eemaa-form-section spouse-field">
-                    <div class="eemaa-section-header">
-                        <div class="eemaa-section-circle">7</div>
-                        <h2>Spouse Contact Information</h2>
-                    </div>
-
-                    <div class="eemaa-grid">
-                        <div class="eemaa-field">
-                            <label class="eemaa-label">Spouse’s Cell Phone</label>
-                            <input class="eemaa-input" type="tel" name="spouse_cell_phone" placeholder="Enter spouse cell phone">
-                        </div>
-
-                        <div class="eemaa-field">
-                            <label class="eemaa-label">Spouse’s Email</label>
-                            <input class="eemaa-input" type="email" name="spouse_email" placeholder="spouse@example.com">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="eemaa-form-section">
-                    <div class="eemaa-section-header">
-                        <div class="eemaa-section-circle">8</div>
-                        <h2>Children Under 22 Years of Age</h2>
-                    </div>
-
-                    <div class="eemaa-note">
-                        Names of children under 22 years of age and date of birth. Proof of age document is required with the membership application.
-                    </div>
-
-                    <div class="eemaa-grid">
-                        <div class="eemaa-field">
-                            <label class="eemaa-label">Child 1 Name</label>
-                            <input class="eemaa-input" type="text" name="child_1_name" placeholder="Enter child name">
-                        </div>
-
-                        <div class="eemaa-field">
-                            <label class="eemaa-label">Child 1 Birthday</label>
-                            <input class="eemaa-input" type="date" name="child_1_birthday">
-                        </div>
-
-                        <div class="eemaa-field">
-                            <label class="eemaa-label">Child 2 Name</label>
-                            <input class="eemaa-input" type="text" name="child_2_name" placeholder="Enter child name">
-                        </div>
-
-                        <div class="eemaa-field">
-                            <label class="eemaa-label">Child 2 Birthday</label>
-                            <input class="eemaa-input" type="date" name="child_2_birthday">
-                        </div>
-
-                        <div class="eemaa-field">
-                            <label class="eemaa-label">Child 3 Name</label>
-                            <input class="eemaa-input" type="text" name="child_3_name" placeholder="Enter child name">
-                        </div>
-
-                        <div class="eemaa-field">
-                            <label class="eemaa-label">Child 3 Birthday</label>
-                            <input class="eemaa-input" type="date" name="child_3_birthday">
-                        </div>
-
-                        <div class="eemaa-field">
-                            <label class="eemaa-label">Child 4 Name</label>
-                            <input class="eemaa-input" type="text" name="child_4_name" placeholder="Enter child name">
-                        </div>
-
-                        <div class="eemaa-field">
-                            <label class="eemaa-label">Child 4 Birthday</label>
-                            <input class="eemaa-input" type="date" name="child_4_birthday">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="eemaa-form-section">
-                    <div class="eemaa-section-header">
-                        <div class="eemaa-section-circle">9</div>
-                        <h2>Death Beneficiary</h2>
-                    </div>
-
-                    <div class="eemaa-grid">
-                        <div class="eemaa-field full">
-                            <label class="eemaa-label">Death Beneficiary</label>
-                            <input class="eemaa-input" type="text" name="death_beneficiary" placeholder="Enter death beneficiary">
+                        <div class="eemaa-note">
+                            <p>
+                                All applicants to Edir should apply in person, husband and wife if married, at the in-person Board meeting.
+                            </p>
+                            <p>
+                                If the Board meeting is held virtually, the applicant, both husband and wife if married, must appear at the virtual meeting.
+                            </p>
+                            <p>
+                                All applicants to Edir should submit the following required documents at the in-person Board meeting or by mail if the Board meeting is held virtually.
+                            </p>
                         </div>
                     </div>
 
-                    <div class="eemaa-checkbox-group single eemaa-checkbox-space">
-                        <label class="eemaa-checkbox-card">
-                            <input type="checkbox" name="spouse_is_beneficiary" id="spouseBeneficiary">
-                            <span>Check if your spouse is your beneficiary</span>
-                        </label>
-                    </div>
-                </div>
-
-                <div class="eemaa-form-section" id="beneficiaryFields">
-                    <div class="eemaa-section-header">
-                        <div class="eemaa-section-circle">10</div>
-                        <h2>Beneficiary Details</h2>
-                    </div>
-
-                    <div class="eemaa-grid">
-                        <div class="eemaa-field">
-                            <label class="eemaa-label">Full Name</label>
-                            <input class="eemaa-input" type="text" name="beneficiary_full_name" placeholder="Enter beneficiary full name">
+                    <!-- SECTION 2 -->
+                    <div class="eemaa-form-section">
+                        <div class="eemaa-section-header">
+                            <div class="eemaa-section-circle">2</div>
+                            <h2>Required Documents</h2>
                         </div>
 
-                        <div class="eemaa-field">
-                            <label class="eemaa-label">Relationship to Applicant</label>
-                            <input class="eemaa-input" type="text" name="beneficiary_relationship" placeholder="Enter relationship">
-                        </div>
+                        <div class="eemaa-checkbox-group">
+                            <label class="eemaa-checkbox-card">
+                                <input type="checkbox" name="required_documents[]" value="Completed Application Form" />
+                                <span>Completed Application Form</span>
+                            </label>
 
-                        <div class="eemaa-field full">
-                            <label class="eemaa-label">Full Address of the Beneficiary</label>
-                            <input class="eemaa-input" type="text" name="beneficiary_address" placeholder="Enter full address">
-                        </div>
+                            <label class="eemaa-checkbox-card">
+                                <input type="checkbox" name="required_documents[]" value="Driver License or City ID" />
+                                <span>Driver’s license or City ID with Tri-State address</span>
+                            </label>
 
-                        <div class="eemaa-field">
-                            <label class="eemaa-label">Beneficiary’s Phone Number</label>
-                            <input class="eemaa-input" type="tel" name="beneficiary_phone" placeholder="Enter beneficiary phone number">
-                        </div>
-                    </div>
-                </div>
+                            <label class="eemaa-checkbox-card">
+                                <input type="checkbox" name="required_documents[]" value="Dependent Children Birth Certificate" />
+                                <span>Birth certificate for dependent children under age 22</span>
+                            </label>
 
-                <div class="eemaa-form-section">
-                    <div class="eemaa-section-header">
-                        <div class="eemaa-section-circle">11</div>
-                        <h2>Next of Kin</h2>
-                    </div>
+                            <label class="eemaa-checkbox-card">
+                                <input type="checkbox" name="required_documents[]" value="Applicant Birth Certificate" />
+                                <span>Birth Certificate for applicants aged 22 to 35</span>
+                            </label>
 
-                    <div class="eemaa-note">
-                        Next of kin will be contacted in the absence of a designated beneficiary or if the beneficiary cannot be reached.
-                    </div>
+                            <label class="eemaa-checkbox-card">
+                                <input type="checkbox" name="required_documents[]" value="Marriage Certificate" />
+                                <span>Marriage certificate for married couples</span>
+                            </label>
 
-                    <div class="eemaa-grid">
-                        <div class="eemaa-field">
-                            <label class="eemaa-label">Full Name of Next of Kin <span>*</span></label>
-                            <input class="eemaa-input" type="text" name="next_of_kin_name" placeholder="Enter full name of next of kin" required>
-                        </div>
-
-                        <div class="eemaa-field">
-                            <label class="eemaa-label">Next of Kin Home Phone Number <span>*</span></label>
-                            <input class="eemaa-input" type="tel" name="next_of_kin_phone" placeholder="Enter home phone number" required>
-                        </div>
-
-                        <div class="eemaa-field full">
-                            <label class="eemaa-label">Email Address</label>
-                            <input class="eemaa-input" type="email" name="next_of_kin_email" placeholder="nextkin@example.com">
+                            <label class="eemaa-checkbox-card">
+                                <input type="checkbox" name="required_documents[]" value="Application Fees" />
+                                <span>Application fees</span>
+                            </label>
                         </div>
                     </div>
-                </div>
 
-                <div class="eemaa-form-section">
-                    <div class="eemaa-section-header">
-                        <div class="eemaa-section-circle">12</div>
-                        <h2>Agreement</h2>
-                    </div>
-
-                    <div class="eemaa-note">
-                        <p>
-                            As a member, I fully agree and abide by the rules and regulations of EEMAA.
-                            I hereby apply for membership and pledge to fully adhere to the Administrative Regulations and Bylaws of EEMAA.
-                            I also certify that the information provided above is true and correct.
-                        </p>
-                    </div>
-
-                    <div class="eemaa-checkbox-group single">
-                        <label class="eemaa-checkbox-card">
-                            <input type="checkbox" name="agreement" required>
-                            <span>Yes, I understand and agree to the terms listed above.</span>
-                        </label>
-                    </div>
-                </div>
-
-                <div class="eemaa-form-section">
-                    <div class="eemaa-section-header">
-                        <div class="eemaa-section-circle">13</div>
-                        <h2>Signatures</h2>
-                    </div>
-
-                    <div class="eemaa-grid">
-                        <div class="eemaa-field">
-                            <label class="eemaa-label">Applicant’s Signature <span>*</span></label>
-                            <input class="eemaa-input" type="text" name="applicant_signature" placeholder="Type applicant full name" required>
+                    <!-- SECTION 3 -->
+                    <div class="eemaa-form-section">
+                        <div class="eemaa-section-header">
+                            <div class="eemaa-section-circle">3</div>
+                            <h2>Dues & Fees</h2>
                         </div>
 
-                        <div class="eemaa-field">
-                            <label class="eemaa-label">Date Signed <span>*</span></label>
-                            <input class="eemaa-input" type="date" name="date_signed" required>
-                        </div>
+                        <div class="eemaa-checkbox-group">
+                            <label class="eemaa-checkbox-card fee-card">
+                                <input type="checkbox" name="dues_fees[]" value="1000" />
+                                <span>$1000 — Couples and individuals over 35 years</span>
+                            </label>
 
-                        <div class="eemaa-field spouse-field">
-                            <label class="eemaa-label">Spouse’s Signature, If Married</label>
-                            <input class="eemaa-input" type="text" name="spouse_signature" placeholder="Type spouse full name">
-                        </div>
+                            <label class="eemaa-checkbox-card fee-card">
+                                <input type="checkbox" name="dues_fees[]" value="150" />
+                                <span>$150 — Applicants aged 22 to 35 years</span>
+                            </label>
 
-                        <div class="eemaa-field spouse-field">
-                            <label class="eemaa-label">Spouse Date Signed</label>
-                            <input class="eemaa-input" type="date" name="spouse_date_signed">
-                        </div>
+                            <label class="eemaa-checkbox-card fee-card">
+                                <input type="checkbox" name="dues_fees[]" value="500" />
+                                <span>$500 — Members’ dependent parent</span>
+                            </label>
 
-                        <div class="eemaa-field full">
-                            <label class="eemaa-label">Authorized EEMAA Official Signature, For Office Use</label>
-                            <input class="eemaa-input" type="text" name="official_signature" placeholder="Authorized EEMAA official signature">
+                            <label class="eemaa-checkbox-card fee-card">
+                                <input type="checkbox" name="dues_fees[]" value="75" />
+                                <span>$75 — Dependents under 22 years</span>
+                            </label>
+
+                            <label class="eemaa-checkbox-card fee-card">
+                                <input type="checkbox" name="dues_fees[]" value="60" />
+                                <span>$60 — Annual administrative fee</span>
+                            </label>
                         </div>
                     </div>
-                </div>
 
-                <div class="eemaa-form-section last-section">
-                    <div class="eemaa-section-header">
-                        <div class="eemaa-section-circle">14</div>
-                        <h2>For Office Use Only</h2>
+                    <!-- SECTION 4 -->
+                    <div class="eemaa-form-section">
+                        <div class="eemaa-section-header">
+                            <div class="eemaa-section-circle">4</div>
+                            <h2>Application for Membership</h2>
+                        </div>
+
+                        <div class="eemaa-grid">
+                            <div class="eemaa-field">
+                                <label class="eemaa-label" for="applicantFullName">Applicant Full Name <span>*</span></label>
+                                <input
+                                    class="eemaa-input"
+                                    type="text"
+                                    id="applicantFullName"
+                                    name="applicant_full_name"
+                                    placeholder="Enter applicant full name"
+                                    autocomplete="name"
+                                    required
+                                />
+                            </div>
+
+                            <div class="eemaa-field">
+                                <label class="eemaa-label" for="maritalStatus">Marital Status <span>*</span></label>
+                                <select class="eemaa-select" name="marital_status" id="maritalStatus" required>
+                                    <option value="">Select Status</option>
+                                    <option value="Single">Single</option>
+                                    <option value="Married">Married</option>
+                                </select>
+                            </div>
+
+                            <div class="eemaa-field full spouse-field">
+                                <label class="eemaa-label" for="spouseFullName">If Married, Full Name of Spouse</label>
+                                <input
+                                    class="eemaa-input"
+                                    type="text"
+                                    id="spouseFullName"
+                                    name="spouse_full_name"
+                                    placeholder="Enter spouse full name"
+                                    autocomplete="name"
+                                />
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="eemaa-grid">
-                        <div class="eemaa-field">
-                            <label class="eemaa-label">Date</label>
-                            <input class="eemaa-input" type="date" name="office_date">
+                    <!-- SECTION 5 -->
+                    <div class="eemaa-form-section">
+                        <div class="eemaa-section-header">
+                            <div class="eemaa-section-circle">5</div>
+                            <h2>Permanent Residence Address</h2>
                         </div>
 
-                        <div class="eemaa-field">
-                            <label class="eemaa-label">Assigned EEMAA ID Number</label>
-                            <input class="eemaa-input" type="text" name="eemaa_id_number" placeholder="Enter EEMAA ID number">
-                        </div>
+                        <div class="eemaa-grid">
+                            <div class="eemaa-field full">
+                                <label class="eemaa-label" for="addressLine1">Address Line 1 <span>*</span></label>
+                                <input
+                                    class="eemaa-input"
+                                    type="text"
+                                    id="addressLine1"
+                                    name="address_line_1"
+                                    placeholder="Enter address line 1"
+                                    autocomplete="address-line1"
+                                    required
+                                />
+                            </div>
 
-                        <div class="eemaa-field">
-                            <label class="eemaa-label">For EEMAA’s Use</label>
-                            <select class="eemaa-select" name="application_status">
-                                <option value="">Select Status</option>
-                                <option value="Accepted">Accepted</option>
-                                <option value="Not Accepted">Not Accepted</option>
-                            </select>
-                        </div>
+                            <div class="eemaa-field">
+                                <label class="eemaa-label" for="city">City <span>*</span></label>
+                                <input
+                                    class="eemaa-input"
+                                    type="text"
+                                    id="city"
+                                    name="city"
+                                    placeholder="Enter city"
+                                    autocomplete="address-level2"
+                                    required
+                                />
+                            </div>
 
-                        <div class="eemaa-field">
-                            <label class="eemaa-label">Initial</label>
-                            <input class="eemaa-input" type="text" name="initial" placeholder="Initial">
-                        </div>
+                            <div class="eemaa-field">
+                                <label class="eemaa-label" for="state">State <span>*</span></label>
+                                <input
+                                    class="eemaa-input"
+                                    type="text"
+                                    id="state"
+                                    name="state"
+                                    placeholder="Enter state"
+                                    autocomplete="address-level1"
+                                    required
+                                />
+                            </div>
 
-                        <div class="eemaa-field">
-                            <label class="eemaa-label">Status Date</label>
-                            <input class="eemaa-input" type="date" name="status_date">
+                            <div class="eemaa-field">
+                                <label class="eemaa-label" for="zipCode">Zip Code <span>*</span></label>
+                                <input
+                                    class="eemaa-input"
+                                    type="text"
+                                    id="zipCode"
+                                    name="zip_code"
+                                    placeholder="Enter zip code"
+                                    autocomplete="postal-code"
+                                    required
+                                />
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="eemaa-submit-wrap">
-                    <button type="submit" class="eemaa-submit-btn">
-                     Submit Application <i class="fas fa-paper-plane"></i>
-                    </button>
-                </div>
+                    <!-- SECTION 6 -->
+                    <div class="eemaa-form-section">
+                        <div class="eemaa-section-header">
+                            <div class="eemaa-section-circle">6</div>
+                            <h2>Contact Details</h2>
+                        </div>
 
-                
+                        <div class="eemaa-grid">
+                            <div class="eemaa-field">
+                                <label class="eemaa-label" for="homePhone">Home Phone</label>
+                                <input
+                                    class="eemaa-input"
+                                    type="tel"
+                                    id="homePhone"
+                                    name="home_phone"
+                                    placeholder="Enter home phone"
+                                    autocomplete="tel"
+                                />
+                            </div>
 
-                <p id="formMessage" class="eemaa-message"></p>
+                            <div class="eemaa-field">
+                                <label class="eemaa-label" for="cellPhone">Cell Phone <span>*</span></label>
+                                <input
+                                    class="eemaa-input"
+                                    type="tel"
+                                    id="cellPhone"
+                                    name="cell_phone"
+                                    placeholder="Enter cell phone"
+                                    autocomplete="tel"
+                                    required
+                                />
+                            </div>
 
-            </form>
-        </section>
+                            <div class="eemaa-field full">
+                                <label class="eemaa-label" for="email">Email <span>*</span></label>
+                                <input
+                                    class="eemaa-input"
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    placeholder="example@email.com"
+                                    autocomplete="email"
+                                    required
+                                />
+                            </div>
+                        </div>
+                    </div>
 
-        <footer class="eemaa-footer">
-            <h3>የኢትዮጵያውያን እድር የመረዳጃ ማህበር በኒውዮርክ ኢንክ</h3>
-            <p>Ethiopian Edir Mutual Assistance Association in New York Inc.</p>
-            <p>450 Lexington Ave. 4th Floor, C/o WeWork, New York, NY 10017</p>
-        </footer>
+                    <!-- SECTION 7 -->
+                    <div class="eemaa-form-section spouse-field">
+                        <div class="eemaa-section-header">
+                            <div class="eemaa-section-circle">7</div>
+                            <h2>Spouse Contact Information</h2>
+                        </div>
 
-    </main>
-</div>
+                        <div class="eemaa-grid">
+                            <div class="eemaa-field">
+                                <label class="eemaa-label" for="spouseCellPhone">Spouse’s Cell Phone</label>
+                                <input
+                                    class="eemaa-input"
+                                    type="tel"
+                                    id="spouseCellPhone"
+                                    name="spouse_cell_phone"
+                                    placeholder="Enter spouse cell phone"
+                                    autocomplete="tel"
+                                />
+                            </div>
 
-<script src="script.js"></script>
+                            <div class="eemaa-field">
+                                <label class="eemaa-label" for="spouseEmail">Spouse’s Email</label>
+                                <input
+                                    class="eemaa-input"
+                                    type="email"
+                                    id="spouseEmail"
+                                    name="spouse_email"
+                                    placeholder="spouse@example.com"
+                                    autocomplete="email"
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 8 -->
+                    <div class="eemaa-form-section">
+                        <div class="eemaa-section-header">
+                            <div class="eemaa-section-circle">8</div>
+                            <h2>Children Under 22 Years of Age</h2>
+                        </div>
+
+                        <div class="eemaa-note">
+                            Names of children under 22 years of age and date of birth. Proof of age document is required with the membership application.
+                        </div>
+
+                        <div class="eemaa-grid">
+                            <div class="eemaa-field">
+                                <label class="eemaa-label" for="child1Name">Child 1 Name</label>
+                                <input class="eemaa-input" type="text" id="child1Name" name="child_1_name" placeholder="Enter child name" />
+                            </div>
+
+                            <div class="eemaa-field">
+                                <label class="eemaa-label" for="child1Birthday">Child 1 Birthday</label>
+                                <input class="eemaa-input" type="date" id="child1Birthday" name="child_1_birthday" />
+                            </div>
+
+                            <div class="eemaa-field">
+                                <label class="eemaa-label" for="child2Name">Child 2 Name</label>
+                                <input class="eemaa-input" type="text" id="child2Name" name="child_2_name" placeholder="Enter child name" />
+                            </div>
+
+                            <div class="eemaa-field">
+                                <label class="eemaa-label" for="child2Birthday">Child 2 Birthday</label>
+                                <input class="eemaa-input" type="date" id="child2Birthday" name="child_2_birthday" />
+                            </div>
+
+                            <div class="eemaa-field">
+                                <label class="eemaa-label" for="child3Name">Child 3 Name</label>
+                                <input class="eemaa-input" type="text" id="child3Name" name="child_3_name" placeholder="Enter child name" />
+                            </div>
+
+                            <div class="eemaa-field">
+                                <label class="eemaa-label" for="child3Birthday">Child 3 Birthday</label>
+                                <input class="eemaa-input" type="date" id="child3Birthday" name="child_3_birthday" />
+                            </div>
+
+                            <div class="eemaa-field">
+                                <label class="eemaa-label" for="child4Name">Child 4 Name</label>
+                                <input class="eemaa-input" type="text" id="child4Name" name="child_4_name" placeholder="Enter child name" />
+                            </div>
+
+                            <div class="eemaa-field">
+                                <label class="eemaa-label" for="child4Birthday">Child 4 Birthday</label>
+                                <input class="eemaa-input" type="date" id="child4Birthday" name="child_4_birthday" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 9 -->
+                    <div class="eemaa-form-section">
+                        <div class="eemaa-section-header">
+                            <div class="eemaa-section-circle">9</div>
+                            <h2>Death Beneficiary</h2>
+                        </div>
+
+                        <div class="eemaa-grid">
+                            <div class="eemaa-field full">
+                                <label class="eemaa-label" for="deathBeneficiary">Death Beneficiary</label>
+                                <input
+                                    class="eemaa-input"
+                                    type="text"
+                                    id="deathBeneficiary"
+                                    name="death_beneficiary"
+                                    placeholder="Enter death beneficiary"
+                                />
+                            </div>
+                        </div>
+
+                        <div class="eemaa-checkbox-group single eemaa-checkbox-space">
+                            <label class="eemaa-checkbox-card" for="spouseBeneficiary">
+                                <input type="checkbox" name="spouse_is_beneficiary" id="spouseBeneficiary" />
+                                <span>Check if your spouse is your beneficiary</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 10 -->
+                    <div class="eemaa-form-section" id="beneficiaryFields">
+                        <div class="eemaa-section-header">
+                            <div class="eemaa-section-circle">10</div>
+                            <h2>Beneficiary Details</h2>
+                        </div>
+
+                        <div class="eemaa-grid">
+                            <div class="eemaa-field">
+                                <label class="eemaa-label" for="beneficiaryFullName">Full Name</label>
+                                <input
+                                    class="eemaa-input"
+                                    type="text"
+                                    id="beneficiaryFullName"
+                                    name="beneficiary_full_name"
+                                    placeholder="Enter beneficiary full name"
+                                />
+                            </div>
+
+                            <div class="eemaa-field">
+                                <label class="eemaa-label" for="beneficiaryRelationship">Relationship to Applicant</label>
+                                <input
+                                    class="eemaa-input"
+                                    type="text"
+                                    id="beneficiaryRelationship"
+                                    name="beneficiary_relationship"
+                                    placeholder="Enter relationship"
+                                />
+                            </div>
+
+                            <div class="eemaa-field full">
+                                <label class="eemaa-label" for="beneficiaryAddress">Full Address of the Beneficiary</label>
+                                <input
+                                    class="eemaa-input"
+                                    type="text"
+                                    id="beneficiaryAddress"
+                                    name="beneficiary_address"
+                                    placeholder="Enter full address"
+                                />
+                            </div>
+
+                            <div class="eemaa-field">
+                                <label class="eemaa-label" for="beneficiaryPhone">Beneficiary’s Phone Number</label>
+                                <input
+                                    class="eemaa-input"
+                                    type="tel"
+                                    id="beneficiaryPhone"
+                                    name="beneficiary_phone"
+                                    placeholder="Enter beneficiary phone number"
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 11 -->
+                    <div class="eemaa-form-section">
+                        <div class="eemaa-section-header">
+                            <div class="eemaa-section-circle">11</div>
+                            <h2>Next of Kin</h2>
+                        </div>
+
+                        <div class="eemaa-note">
+                            Next of kin will be contacted in the absence of a designated beneficiary or if the beneficiary cannot be reached.
+                        </div>
+
+                        <div class="eemaa-grid">
+                            <div class="eemaa-field">
+                                <label class="eemaa-label" for="nextOfKinName">Full Name of Next of Kin <span>*</span></label>
+                                <input
+                                    class="eemaa-input"
+                                    type="text"
+                                    id="nextOfKinName"
+                                    name="next_of_kin_name"
+                                    placeholder="Enter full name of next of kin"
+                                    required
+                                />
+                            </div>
+
+                            <div class="eemaa-field">
+                                <label class="eemaa-label" for="nextOfKinPhone">Next of Kin Home Phone Number <span>*</span></label>
+                                <input
+                                    class="eemaa-input"
+                                    type="tel"
+                                    id="nextOfKinPhone"
+                                    name="next_of_kin_phone"
+                                    placeholder="Enter home phone number"
+                                    required
+                                />
+                            </div>
+
+                            <div class="eemaa-field full">
+                                <label class="eemaa-label" for="nextOfKinEmail">Email Address</label>
+                                <input
+                                    class="eemaa-input"
+                                    type="email"
+                                    id="nextOfKinEmail"
+                                    name="next_of_kin_email"
+                                    placeholder="nextkin@example.com"
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 12 -->
+                    <div class="eemaa-form-section">
+                        <div class="eemaa-section-header">
+                            <div class="eemaa-section-circle">12</div>
+                            <h2>Agreement</h2>
+                        </div>
+
+                        <div class="eemaa-note">
+                            <p>
+                                As a member, I fully agree and abide by the rules and regulations of EEMAA.
+                                I hereby apply for membership and pledge to fully adhere to the Administrative Regulations and Bylaws of EEMAA.
+                                I also certify that the information provided above is true and correct.
+                            </p>
+                        </div>
+
+                        <div class="eemaa-checkbox-group single">
+                            <label class="eemaa-checkbox-card">
+                                <input type="checkbox" name="agreement" required />
+                                <span>Yes, I understand and agree to the terms listed above.</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 13 -->
+                    <div class="eemaa-form-section">
+                        <div class="eemaa-section-header">
+                            <div class="eemaa-section-circle">13</div>
+                            <h2>Signatures</h2>
+                        </div>
+
+                        <div class="eemaa-grid">
+                            <div class="eemaa-field">
+                                <label class="eemaa-label" for="applicantSignature">Applicant’s Signature <span>*</span></label>
+                                <input
+                                    class="eemaa-input"
+                                    type="text"
+                                    id="applicantSignature"
+                                    name="applicant_signature"
+                                    placeholder="Type applicant full name"
+                                    required
+                                />
+                            </div>
+
+                            <div class="eemaa-field">
+                                <label class="eemaa-label" for="dateSigned">Date Signed <span>*</span></label>
+                                <input class="eemaa-input" type="date" id="dateSigned" name="date_signed" required />
+                            </div>
+
+                            <div class="eemaa-field spouse-field">
+                                <label class="eemaa-label" for="spouseSignature">Spouse’s Signature, If Married</label>
+                                <input
+                                    class="eemaa-input"
+                                    type="text"
+                                    id="spouseSignature"
+                                    name="spouse_signature"
+                                    placeholder="Type spouse full name"
+                                />
+                            </div>
+
+                            <div class="eemaa-field spouse-field">
+                                <label class="eemaa-label" for="spouseDateSigned">Spouse Date Signed</label>
+                                <input class="eemaa-input" type="date" id="spouseDateSigned" name="spouse_date_signed" />
+                            </div>
+
+                            <div class="eemaa-field full">
+                                <label class="eemaa-label" for="officialSignature">Authorized EEMAA Official Signature, For Office Use</label>
+                                <input
+                                    class="eemaa-input"
+                                    type="text"
+                                    id="officialSignature"
+                                    name="official_signature"
+                                    placeholder="Authorized EEMAA official signature"
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 14 -->
+                    <div class="eemaa-form-section last-section">
+                        <div class="eemaa-section-header">
+                            <div class="eemaa-section-circle">14</div>
+                            <h2>For Office Use Only</h2>
+                        </div>
+
+                        <div class="eemaa-grid">
+                            <div class="eemaa-field">
+                                <label class="eemaa-label" for="officeDate">Date</label>
+                                <input class="eemaa-input" type="date" id="officeDate" name="office_date" />
+                            </div>
+
+                            <div class="eemaa-field">
+                                <label class="eemaa-label" for="eemaaIdNumber">Assigned EEMAA ID Number</label>
+                                <input
+                                    class="eemaa-input"
+                                    type="text"
+                                    id="eemaaIdNumber"
+                                    name="eemaa_id_number"
+                                    placeholder="Enter EEMAA ID number"
+                                />
+                            </div>
+
+                            <div class="eemaa-field">
+                                <label class="eemaa-label" for="applicationStatus">For EEMAA’s Use</label>
+                                <select class="eemaa-select" id="applicationStatus" name="application_status">
+                                    <option value="">Select Status</option>
+                                    <option value="Accepted">Accepted</option>
+                                    <option value="Not Accepted">Not Accepted</option>
+                                </select>
+                            </div>
+
+                            <div class="eemaa-field">
+                                <label class="eemaa-label" for="initial">Initial</label>
+                                <input class="eemaa-input" type="text" id="initial" name="initial" placeholder="Initial" />
+                            </div>
+
+                            <div class="eemaa-field">
+                                <label class="eemaa-label" for="statusDate">Status Date</label>
+                                <input class="eemaa-input" type="date" id="statusDate" name="status_date" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="eemaa-submit-wrap">
+                        <button type="submit" class="eemaa-submit-btn">
+                            Submit Application <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                        </button>
+                    </div>
+
+                    <p id="formMessage" class="eemaa-message" aria-live="polite"></p>
+                </form>
+            </section>
+
+            <footer class="eemaa-footer">
+                <h3>የኢትዮጵያውያን እድር የመረዳጃ ማህበር በኒውዮርክ ኢንክ</h3>
+                <p>Ethiopian Edir Mutual Assistance Association in New York Inc.</p>
+                <p>450 Lexington Ave. 4th Floor, C/o WeWork, New York, NY 10017</p>
+            </footer>
+
+        </main>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>

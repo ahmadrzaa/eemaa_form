@@ -124,6 +124,61 @@ function collectFormData() {
     return payload;
 }
 
+function createSuccessPopup() {
+    let popup = document.getElementById("eemaaSuccessPopup");
+
+    if (popup) return popup;
+
+    popup = document.createElement("div");
+    popup.id = "eemaaSuccessPopup";
+    popup.className = "eemaa-popup-overlay";
+
+    popup.innerHTML = `
+        <div class="eemaa-popup-box" role="dialog" aria-modal="true" aria-labelledby="eemaaPopupTitle">
+            <div class="eemaa-popup-icon">
+                <i class="fas fa-paper-plane"></i>
+            </div>
+            <h3 id="eemaaPopupTitle">Thank You for Submitting</h3>
+            <p>
+                Your EEMAA membership application has been received.
+                Our team will review it and get back to you soon.
+            </p>
+            <button type="button" class="eemaa-popup-close">Close</button>
+        </div>
+    `;
+
+    document.body.appendChild(popup);
+
+    const closeBtn = popup.querySelector(".eemaa-popup-close");
+
+    closeBtn.addEventListener("click", () => {
+        popup.classList.remove("show");
+        document.body.style.overflow = "";
+    });
+
+    popup.addEventListener("click", (event) => {
+        if (event.target === popup) {
+            popup.classList.remove("show");
+            document.body.style.overflow = "";
+        }
+    });
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && popup.classList.contains("show")) {
+            popup.classList.remove("show");
+            document.body.style.overflow = "";
+        }
+    });
+
+    return popup;
+}
+
+function showSuccessPopup() {
+    const popup = createSuccessPopup();
+    popup.classList.add("show");
+    document.body.style.overflow = "hidden";
+}
+
 if (maritalStatus) {
     maritalStatus.addEventListener("change", toggleSpouseFields);
 }
@@ -167,9 +222,11 @@ if (form) {
             }
 
             if (formMessage) {
-                formMessage.textContent = "Application submitted successfully.";
-                formMessage.classList.add("success");
+                formMessage.textContent = "";
+                formMessage.className = "eemaa-message";
             }
+
+            showSuccessPopup();
 
             form.reset();
             toggleSpouseFields();

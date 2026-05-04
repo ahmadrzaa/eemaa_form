@@ -12,9 +12,11 @@
 html,
 body {
     width: 100%;
+    max-width: 100%;
     min-height: 100%;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 html {
@@ -32,8 +34,21 @@ body {
     background-attachment: fixed;
     scrollbar-width: thin;
     scrollbar-color: #000 #f1f1f1;
-    overflow-x: hidden;
     -webkit-text-size-adjust: 100%;
+}
+
+img,
+svg,
+video,
+canvas {
+    max-width: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+    max-width: 100%;
 }
 
 ::-webkit-scrollbar {
@@ -57,16 +72,19 @@ body {
 /* PAGE */
 .eemaa-member-page {
     width: 100%;
+    max-width: 100%;
     min-height: 100vh;
     padding: 0 0 60px;
     font-family: "Poppins", Helvetica, Arial, sans-serif;
+    overflow-x: hidden;
 }
 
 /* MAIN WIDTH */
 .eemaa-member-shell {
-    width: calc(100% - 48px);
-    max-width: 1100px;
+    width: min(1100px, calc(100vw - 48px));
+    max-width: 100%;
     margin: 0 auto;
+    overflow-x: hidden;
 }
 
 /* HERO */
@@ -74,6 +92,7 @@ body {
     text-align: center;
     padding-top: 42px;
     margin-bottom: 30px;
+    max-width: 100%;
 }
 
 .eemaa-hero h1 {
@@ -99,17 +118,20 @@ body {
 /* FORM CARD */
 .eemaa-form-container {
     width: 100%;
+    max-width: 100%;
     margin: 0 auto;
     background: #ffffff;
     border-radius: 20px;
     box-shadow: 0 10px 40px rgba(0, 5, 20, 0.04);
     padding: 40px 60px;
     border: 1px solid rgba(226, 232, 240, 0.8);
+    overflow-x: hidden;
 }
 
 /* SECTIONS */
 .eemaa-form-section {
     margin-bottom: 50px;
+    max-width: 100%;
 }
 
 .eemaa-form-section.last-section {
@@ -123,6 +145,7 @@ body {
     padding-bottom: 22px;
     margin-bottom: 28px;
     border-bottom: 1px solid #edf1f5;
+    max-width: 100%;
 }
 
 .eemaa-section-circle {
@@ -148,7 +171,10 @@ body {
     text-transform: uppercase;
     letter-spacing: 4px;
     line-height: 1.25;
+    min-width: 0;
+    max-width: 100%;
     overflow-wrap: anywhere;
+    word-break: break-word;
 }
 
 /* GRID */
@@ -156,11 +182,13 @@ body {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 28px 80px;
+    max-width: 100%;
 }
 
 .eemaa-field {
     width: 100%;
     min-width: 0;
+    max-width: 100%;
 }
 
 .eemaa-field.full {
@@ -175,6 +203,9 @@ body {
     color: #475569;
     margin-bottom: 10px;
     line-height: 1.35;
+    min-width: 0;
+    max-width: 100%;
+    overflow-wrap: anywhere;
 }
 
 .eemaa-label span {
@@ -185,7 +216,10 @@ body {
 .eemaa-input,
 .eemaa-select,
 .eemaa-textarea {
+    display: block;
     width: 100%;
+    max-width: 100%;
+    min-width: 0;
     height: 52px;
     padding: 0 20px;
     background: #ffffff;
@@ -197,7 +231,6 @@ body {
     font-weight: 400;
     outline: none;
     box-shadow: none;
-    min-width: 0;
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -235,6 +268,26 @@ body {
     resize: vertical;
 }
 
+/* DATE INPUT FIX FOR MOBILE */
+input[type="date"].eemaa-input {
+    appearance: none;
+    -webkit-appearance: none;
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
+    line-height: normal;
+}
+
+input[type="date"].eemaa-input::-webkit-date-and-time-value {
+    text-align: left;
+    min-height: 1.2em;
+}
+
+input[type="date"].eemaa-input::-webkit-calendar-picker-indicator {
+    margin-left: auto;
+    cursor: pointer;
+}
+
 /* NOTE BOX */
 .eemaa-note {
     background: #f8fafc;
@@ -245,7 +298,9 @@ body {
     color: #475569;
     font-size: 0.95rem;
     line-height: 1.7;
+    max-width: 100%;
     overflow-wrap: anywhere;
+    word-break: break-word;
 }
 
 .eemaa-note p {
@@ -261,6 +316,7 @@ body {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 16px;
+    max-width: 100%;
 }
 
 .eemaa-checkbox-group.single {
@@ -275,6 +331,8 @@ body {
 /* CHECKBOX CARDS */
 .eemaa-checkbox-card {
     width: 100%;
+    max-width: 100%;
+    min-width: 0;
     min-height: 66px;
     background: #f8fafc;
     border: 1px solid #e2e8f0;
@@ -290,6 +348,7 @@ body {
     font-weight: 400;
     line-height: 1.25;
     overflow-wrap: anywhere;
+    word-break: break-word;
     transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
     -webkit-tap-highlight-color: transparent;
 }
@@ -312,6 +371,7 @@ body {
 .eemaa-checkbox-card span {
     display: block;
     min-width: 0;
+    max-width: 100%;
 }
 
 /* SELECTED CHECKBOX CARD */
@@ -341,6 +401,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    max-width: 100%;
 }
 
 .eemaa-submit-btn {
@@ -358,12 +419,14 @@ body {
     justify-content: center;
     gap: 12px;
     width: auto;
+    max-width: 100%;
     min-width: 0;
     height: auto;
     margin: 0;
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins", Helvetica, Arial, sans-serif;
     line-height: 1.2;
     white-space: nowrap;
+    text-align: center;
 }
 
 .eemaa-submit-btn i {
@@ -404,6 +467,7 @@ body {
     margin-top: 28px;
     color: #ffffff;
     text-shadow: 0 2px 5px rgba(0, 0, 0, 0.35);
+    max-width: 100%;
 }
 
 .eemaa-footer h3 {
@@ -412,6 +476,7 @@ body {
     color: #ffffff;
     font-weight: 700;
     line-height: 1.5;
+    overflow-wrap: anywhere;
 }
 
 .eemaa-footer p {
@@ -420,6 +485,93 @@ body {
     color: #ffffff;
     font-weight: 500;
     line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+/* SUCCESS POPUP */
+.eemaa-popup-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(15, 23, 42, 0.45);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 18px;
+}
+
+.eemaa-popup-overlay.show {
+    display: flex;
+}
+
+.eemaa-popup-box {
+    width: min(430px, 100%);
+    background: #ffffff;
+    border: 1px solid rgba(226, 232, 240, 0.95);
+    border-radius: 20px;
+    padding: 30px 28px;
+    text-align: center;
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.22);
+    position: relative;
+    animation: eemaaPopupIn 0.25s ease-out;
+}
+
+@keyframes eemaaPopupIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.eemaa-popup-icon {
+    width: 58px;
+    height: 58px;
+    margin: 0 auto 16px;
+    border-radius: 50%;
+    background: #fffaf0;
+    border: 1px solid rgba(163, 134, 71, 0.35);
+    color: #a38647;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+}
+
+.eemaa-popup-box h3 {
+    margin: 0 0 10px;
+    color: #06243b;
+    font-size: 1.35rem;
+    line-height: 1.3;
+    font-weight: 700;
+}
+
+.eemaa-popup-box p {
+    margin: 0;
+    color: #475569;
+    font-size: 0.96rem;
+    line-height: 1.65;
+}
+
+.eemaa-popup-close {
+    margin-top: 22px;
+    background: #a38647;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    padding: 13px 30px;
+    font-family: "Poppins", Helvetica, Arial, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.eemaa-popup-close:hover {
+    background: #8b7139;
 }
 
 /* STATES */
@@ -435,8 +587,7 @@ body {
 /* TABLET / SMALL LAPTOP */
 @media (max-width: 1024px) {
     .eemaa-member-shell {
-        width: calc(100% - 40px);
-        max-width: 920px;
+        width: min(920px, calc(100vw - 40px));
     }
 
     .eemaa-form-container {
@@ -463,7 +614,7 @@ body {
     }
 
     .eemaa-member-shell {
-        width: calc(100% - 28px);
+        width: calc(100vw - 28px);
         max-width: 680px;
     }
 
@@ -509,7 +660,7 @@ body {
 
     .eemaa-section-header h2 {
         font-size: 1rem;
-        letter-spacing: 2.4px;
+        letter-spacing: 2.2px;
         line-height: 1.35;
         padding-top: 3px;
     }
@@ -542,7 +693,7 @@ body {
 
     .eemaa-submit-btn {
         width: auto;
-        min-width: 220px;
+        min-width: 210px;
         padding: 15px 28px;
         font-size: 1rem;
         border-radius: 10px;
@@ -552,7 +703,7 @@ body {
 /* NORMAL MOBILE */
 @media (max-width: 600px) {
     .eemaa-member-shell {
-        width: calc(100% - 22px);
+        width: calc(100vw - 22px);
     }
 
     .eemaa-hero {
@@ -583,7 +734,7 @@ body {
 
     .eemaa-section-header h2 {
         font-size: 0.92rem;
-        letter-spacing: 2px;
+        letter-spacing: 1.8px;
     }
 
     .eemaa-label {
@@ -594,9 +745,14 @@ body {
     .eemaa-select,
     .eemaa-textarea {
         height: 50px;
-        padding-left: 15px;
-        padding-right: 15px;
+        padding-left: 14px;
+        padding-right: 14px;
         font-size: 16px;
+    }
+
+    input[type="date"].eemaa-input {
+        padding-left: 12px;
+        padding-right: 10px;
     }
 
     .eemaa-select {
@@ -627,16 +783,29 @@ body {
     }
 
     .eemaa-submit-btn {
-        min-width: 205px;
+        min-width: 200px;
         padding: 14px 24px;
         font-size: 0.95rem;
+    }
+
+    .eemaa-popup-box {
+        border-radius: 18px;
+        padding: 26px 20px;
+    }
+
+    .eemaa-popup-box h3 {
+        font-size: 1.2rem;
+    }
+
+    .eemaa-popup-box p {
+        font-size: 0.9rem;
     }
 }
 
 /* SMALL MOBILE / IPHONE SE SIZE */
 @media (max-width: 390px) {
     .eemaa-member-shell {
-        width: calc(100% - 18px);
+        width: calc(100vw - 18px);
     }
 
     .eemaa-hero h1 {
@@ -666,11 +835,24 @@ body {
 
     .eemaa-section-header h2 {
         font-size: 0.84rem;
-        letter-spacing: 1.6px;
+        letter-spacing: 1.2px;
     }
 
     .eemaa-grid {
         gap: 20px;
+    }
+
+    .eemaa-input,
+    .eemaa-select,
+    .eemaa-textarea {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    input[type="date"].eemaa-input {
+        padding-left: 10px;
+        padding-right: 8px;
+        font-size: 15px;
     }
 
     .eemaa-checkbox-card {
@@ -689,7 +871,7 @@ body {
     }
 
     .eemaa-submit-btn {
-        min-width: 190px;
+        min-width: 185px;
         padding: 13px 20px;
         font-size: 0.9rem;
         border-radius: 9px;
@@ -699,7 +881,7 @@ body {
 /* EXTRA TINY MOBILE */
 @media (max-width: 340px) {
     .eemaa-member-shell {
-        width: calc(100% - 14px);
+        width: calc(100vw - 14px);
     }
 
     .eemaa-form-container {
@@ -708,37 +890,25 @@ body {
 
     .eemaa-section-header h2 {
         font-size: 0.78rem;
-        letter-spacing: 1.2px;
+        letter-spacing: 0.9px;
     }
 
     .eemaa-input,
     .eemaa-select,
     .eemaa-textarea {
-        padding-left: 12px;
-        padding-right: 12px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    input[type="date"].eemaa-input {
+        font-size: 14px;
+        padding-left: 8px;
+        padding-right: 6px;
     }
 
     .eemaa-submit-btn {
-        min-width: 175px;
-        padding: 12px 18px;
+        min-width: 170px;
+        padding: 12px 16px;
         font-size: 0.86rem;
-    }
-}
-
-@media (max-width: 850px) {
-    .eemaa-submit-btn {
-        width: auto;
-        min-width: 210px;
-        padding: 15px 28px;
-        font-size: 1rem;
-        border-radius: 10px;
-    }
-}
-
-@media (max-width: 390px) {
-    .eemaa-submit-btn {
-        min-width: 190px;
-        padding: 13px 22px;
-        font-size: 0.9rem;
     }
 }
