@@ -333,26 +333,25 @@ input[type="date"].eemaa-input::-webkit-calendar-picker-indicator {
     width: 100%;
     max-width: 100%;
     min-width: 0;
-    min-height: 66px;
+    min-height: 56px;
     background: #f8fafc;
     border: 1px solid #e2e8f0;
     border-radius: 9px;
-    padding: 15px 20px;
+    padding: 12px 18px;
     display: flex;
     align-items: center;
-    gap: 14px;
+    gap: 12px;
     cursor: pointer;
     margin: 0;
     color: #000000;
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 400;
-    line-height: 1.25;
-    overflow-wrap: anywhere;
-    word-break: break-word;
+    line-height: 1.2;
+    overflow-wrap: normal;
+    word-break: normal;
     transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
     -webkit-tap-highlight-color: transparent;
 }
-
 .eemaa-checkbox-card:hover {
     background: #ffffff;
     border-color: #a38647;
@@ -701,6 +700,17 @@ input[type="date"].eemaa-input::-webkit-calendar-picker-indicator {
     }
 }
 
+
+@media (min-width: 851px) {
+    .eemaa-checkbox-card span {
+        font-size: 0.9rem;
+        line-height: 1.2;
+    }
+
+    .eemaa-checkbox-card {
+        min-height: 56px;
+    }
+}
 /* NORMAL MOBILE */
 @media (max-width: 600px) {
     .eemaa-member-shell {
