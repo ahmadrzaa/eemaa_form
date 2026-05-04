@@ -1,6 +1,3 @@
-(
-echo node_modules/
-echo data/applications.json
-echo .env
-echo npm-debug.log*
-) > .gitignore
+node_modules/
+data/applications.json
+.env
