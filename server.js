@@ -5,14 +5,17 @@ const path = require("path");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(express.json({ limit: "2mb" }));
-app.use(express.urlencoded({ extended: true }));
-
 const ROOT_DIR = __dirname;
 const DATA_DIR = path.join(ROOT_DIR, "data");
 const DATA_FILE = path.join(DATA_DIR, "applications.json");
 
-// Serve frontend files safely
+app.use(express.json({ limit: "2mb" }));
+app.use(express.urlencoded({ extended: true }));
+
+/* =========================
+   FRONTEND FILE ROUTES
+========================= */
+
 app.get("/", (req, res) => {
     res.sendFile(path.join(ROOT_DIR, "index.html"));
 });
@@ -33,6 +36,10 @@ app.get("/bg2-02.jpg", (req, res) => {
     res.sendFile(path.join(ROOT_DIR, "bg2-02.jpg"));
 });
 
+/* =========================
+   DATA HELPERS
+========================= */
+
 async function ensureDataFile() {
     await fs.mkdir(DATA_DIR, { recursive: true });
 
@@ -41,6 +48,53 @@ async function ensureDataFile() {
     } catch {
         await fs.writeFile(DATA_FILE, "[]", "utf8");
     }
+}
+
+async function readApplications() {
+    await ensureDataFile();
+
+    try {
+        const fileData = await fs.readFile(DATA_FILE, "utf8");
+        const parsedData = JSON.parse(fileData || "[]");
+
+        if (!Array.isArray(parsedData)) {
+            return [];
+        }
+
+        return parsedData;
+    } catch (error) {
+        console.error("JSON read/parse error:", error);
+        return [];
+    }
+}
+
+async function saveApplications(applications) {
+    await ensureDataFile();
+    await fs.writeFile(DATA_FILE, JSON.stringify(applications, null, 2), "utf8");
+}
+
+function cleanValue(value) {
+    if (typeof value === "string") {
+        return value.trim();
+    }
+
+    return value;
+}
+
+function cleanApplicationData(data) {
+    const cleaned = {};
+
+    Object.keys(data || {}).forEach((key) => {
+        const value = data[key];
+
+        if (Array.isArray(value)) {
+            cleaned[key] = value.map(cleanValue).filter((item) => item !== "");
+        } else {
+            cleaned[key] = cleanValue(value);
+        }
+    });
+
+    return cleaned;
 }
 
 function validateApplication(data) {
@@ -64,14 +118,26 @@ function validateApplication(data) {
         return !data[field] || String(data[field]).trim() === "";
     });
 
+    if (data.marital_status === "Married" && !data.spouse_full_name) {
+        missingFields.push("spouse_full_name");
+    }
+
     return missingFields;
 }
 
+function generateApplicationId() {
+    const timestamp = Date.now();
+    const random = Math.floor(Math.random() * 100000);
+    return `EEMAA-${timestamp}-${random}`;
+}
+
+/* =========================
+   API ROUTES
+========================= */
+
 app.post("/api/membership", async (req, res) => {
     try {
-        await ensureDataFile();
-
-        const applicationData = req.body;
+        const applicationData = cleanApplicationData(req.body);
         const missingFields = validateApplication(applicationData);
 
         if (missingFields.length > 0) {
@@ -82,20 +148,19 @@ app.post("/api/membership", async (req, res) => {
             });
         }
 
+        const applications = await readApplications();
+
         const newApplication = {
-            id: Date.now().toString(),
+            id: generateApplicationId(),
             submitted_at: new Date().toISOString(),
             ...applicationData
         };
 
-        const existingData = await fs.readFile(DATA_FILE, "utf8");
-        const applications = JSON.parse(existingData || "[]");
-
         applications.push(newApplication);
 
-        await fs.writeFile(DATA_FILE, JSON.stringify(applications, null, 2), "utf8");
+        await saveApplications(applications);
 
-        res.status(201).json({
+        return res.status(201).json({
             success: true,
             message: "Application submitted successfully.",
             application_id: newApplication.id
@@ -104,23 +169,18 @@ app.post("/api/membership", async (req, res) => {
     } catch (error) {
         console.error("Submit error:", error);
 
-        res.status(500).json({
+        return res.status(500).json({
             success: false,
             message: "Server error. Please try again."
         });
     }
 });
 
-// View saved applications in browser
 app.get("/api/applications", async (req, res) => {
     try {
-        await ensureDataFile();
+        const applications = await readApplications();
 
-        const existingData = await fs.readFile(DATA_FILE, "utf8");
-        const applications = JSON.parse(existingData || "[]");
-
-        res.json({ 
-
+        return res.json({
             success: true,
             count: applications.length,
             data: applications
@@ -129,13 +189,36 @@ app.get("/api/applications", async (req, res) => {
     } catch (error) {
         console.error("Read error:", error);
 
-        res.status(500).json({
+        return res.status(500).json({
             success: false,
             message: "Could not read applications."
         });
     }
 });
 
+app.get("/api/health", (req, res) => {
+    res.json({
+        success: true,
+        message: "EEMAA backend is running."
+    });
+});
+
+/* =========================
+   404 ROUTE
+========================= */
+
+app.use((req, res) => {
+    res.status(404).json({
+        success: false,
+        message: "Route not found."
+    });
+});
+
+/* =========================
+   START SERVER
+========================= */
+
 app.listen(PORT, () => {
-    console.log(`EEMAA backend running here: http://localhost:${PORT}`);
+    console.log(`EEMAA backend running on port ${PORT}`);
+    console.log(`Open locally: http://localhost:${PORT}`);
 });
